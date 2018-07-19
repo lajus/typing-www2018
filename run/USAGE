@@ -1,0 +1,64 @@
+In order to compute the results we use the two endpoint classes:
+ * Compute obligatory classes with different methods: "amie.typing.SimpleTyping"
+ * Evaluate the results: "amie.typing.evaluation.SimpleImpliedFactsEvaluator"
+
+One can find all usage options with parameter "-h" or "--help". 
+
+For yago we use, without newline:
+java -Xmx50g -cp lib/*:typing-1.0.jar amie.typing.SimpleTyping 
+  -t1 1.5 2.5 3.0 4.0 5.0 7.5 10.0
+  -t2 0.1 0.2 0.3 0.4 0.5 0.6 0.7 0.8 0.9 1.0
+  -t3 0.001 0.01 0.05 0.1
+  -c relaxed:1 strict:1 fisher:3 b2:2 b3:2 
+  -st 100
+  -cst -2 -5 -10 -20 -50 50 100 150 200
+  -icf ../yago/uni_yagoICounts50.tsv
+  -o yago_full.tsv     
+  -nc 39   
+  ../yago/yagoFacts.tsv ../yago/uni_yagoTransitiveType.tsv ../yago/uni_yagoTaxonomy.tsv 
+&& java -Xmx50g -cp lib/*:typing-1.0.jar amie.typing.evaluation.SimpleImpliedFactsEvaluator 
+  ../yago/yagoFacts.tsv ../yago/uni_yagoTransitiveType.tsv ../yago/uni_yagoTaxonomy.tsv 
+  -gs yago-gs/gs_* 
+  -r yago_full.tsv 
+  -nc 39 
+  -o yago_full_results.tsv
+
+Parameters for SimpleTying:
+ -tN: define the list "N" of parameters.
+ -c: a list of the form method_name:"N" where "N" is the list of parameters to use for 
+this method.
+ -st: support threshold.
+ -cst: a list of thresholds for intersection of classes (discussed in the technical report).
+ -o: output file name.
+ -nc: number of threads used.
+ + datasets files [dependant of our files organization]
+
+Additional parameters for SimpleImpliedFactsEvaluator:
+ -r: the output file of SimpleTyping
+ -gs: the files of the Gold Standard
+
+For wikidata we used:
+java -Xmx50g -cp lib/*:typing-1.0.jar amie.typing.SimpleTyping 
+  -c relaxed:1 strict:1 fisher:3 b2:2 b3:2 
+  -o wikidata_full.tsv 
+  -icf ../wikidata/countsIntersectionClass.tsv_cleaned 
+  -t1 1.5 2.5 3.0 4.0 5.0 7.5 10.0 
+  -t2 0.1 0.2 0.3 0.4 0.5 0.6 0.7 0.8 0.9 1.0 
+  -t3 0.001 0.01 0.05 0.1 
+  -nc 39 
+  -cst -2 -5 -10 -20 -50 50 100 150 200 
+  -st 100 
+  -w
+  ../wikidata/wikidataWorkerFacts.nt_cleaned ../wikidata/wikidataTaxonomy.nt_cleaned 
+../wikidata/wikidataTransitiveTypes.tsv_cleaned 
+&& java -Xmx50g -cp lib/*:typing-1.0.jar amie.typing.evaluation.SimpleImpliedFactsEvaluator 
+  -d w 
+  ../wikidata/wikidataWorkerFacts.nt_cleaned ../wikidata/wikidataTransitiveTypes.tsv_cleaned 
+../wikidata/wikidataTaxonomy.nt_cleaned 
+  -gs wikidata-gs/gs_* 
+  -r wikidata_full.tsv 
+  -nc 39 
+  -o wikidata_full_results.tsv
+
+The parameters "-w" and "-d w" are there to automatically set the type relation, the subClass
+relation, the top class and the loading process according to our wikidata dataset.

@@ -1,0 +1,15 @@
+= Dataset =
+
+Based on the dump wikidata-20170627-truthy-BETA.nt.
+
+From this set we extracted every facts about entities having the <P106>:"occupation"
+attribute. We also extracted every facts for <P279>:"subClassOf" attributes.
+
+Considering <P106> as a type relation we recomputed the transitive closures of types.
+
+= Cleaning =
+
+We noticed the Wikidata taxonomy is not a directed acyclic graph. We ran a Strongly
+Connected Components algorithm to detect cycles and we merged the cycles found.
+Thus, classes named <RQ[number]> represent all classes found in the cycle containing
+the class <Q[number]>.

@@ -1,0 +1,6 @@
+Script used to generate custom classes and taxonomy for the Life Expectancy experiment.
+
+usage: python3 generateClasses.py yagoDateFacts.tsv
+
+The yagoDateFacts.tsv file can be found at:
+http://resources.mpi-inf.mpg.de/yago-naga/yago/download/yago/yagoDateFacts.tsv.7z

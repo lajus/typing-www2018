@@ -1,0 +1,26 @@
+= Data location =
+
+Download and extract the following files:
+ * http://resources.mpi-inf.mpg.de/yago-naga/yago3.1/yagoTransitiveType.tsv.7z
+ * http://resources.mpi-inf.mpg.de/yago-naga/yago3.1/yagoTaxonomy.tsv.7z
+ * http://resources.mpi-inf.mpg.de/yago-naga/yago3.1/yagoFacts.tsv.7z
+
+= Encoding fix =
+
+Our framework has problems handling utf-8 characters. Thus we use decode.py script 
+on all data files to convert them to ascii:
+
+Usage:
+python decode.py [ FILE_1, [ FILE_2, ... [FILE_N]...]]
+
+= Class intersections =
+
+Our algorithm requires to precompute class intersections. A precomputation (unicode free) 
+is available in uni_yagoICounts50.tar.gz.
+It can be recomputed using: 
+java -Xmx[M]g -cp lib/*:typing-1.0.jar amie.data.utils.PrintCounts [-l N] [uni_]yagoTransitiveTypes.tsv
+
+It will create a file named "countsIntersectionClass.tsv" with the size of every classes intersections
+bigger than N. "uni_yagoICounts50.tsv" has been computed with N=50.
+It will also create a file "countsClass.tsv" with the size of every classes which was previously used
+in deprecated versions of our algorithm.

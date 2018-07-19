@@ -1,0 +1,15 @@
+= Dependencies =
+
+Our code is reusing the AMIE data management code, *with some modifications*, as a library, and its dependencies:
+ 
+ * AMIE+: Creative Commons Attribution-NonComercial license v3.0 (http://creativecommons.org/licenses/by-nc/3.0/)
+  By:   Galárraga, Luis
+    	Teflioudi, Christina
+    	Hose, Katja
+    	Suchanek, Fabian
+  Joint project by the YAGO-NAGA team and the DBWeb team of Télécom ParisTech.
+  https://www.mpi-inf.mpg.de/departments/databases-and-information-systems/research/yago-naga/amie/
+ 
+ * javatools: Creative Commons Attribution 3.0 License (http://creativecommons.org/licenses/by/3.0/)
+  By:	the YAGO-NAGA team
+  https://www.mpi-inf.mpg.de/departments/databases-and-information-systems/research/yago-naga/javatools/
