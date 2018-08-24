@@ -8,7 +8,8 @@
 
 - [Jonathan Lajus](https://lajus.github.io), [Fabian M. Suchanek](https://suchanek.name):
   “Are All People Married? Determining Obligatory Attributes in Knowledge Bases” ([pdf](Are%20All%20People%20Married.pdf)
-  Full paper at the [Web Conference](http://www2018.thewebconf.org/) (WWW), 2018
+  
+Full paper at the [Web Conference](http://www2018.thewebconf.org/) (WWW), 2018
 
 ## Datasets
 We ran our system on two datasets
