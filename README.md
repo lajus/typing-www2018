@@ -7,7 +7,7 @@
 ## Publication
 
 - [Jonathan Lajus](https://lajus.github.io), [Fabian M. Suchanek](https://suchanek.name):
-  “Are All People Married? Determining Obligatory Attributes in Knowledge Bases” ([pdf](Are%20All%20People%20Married.pdf)
+  “Are All People Married? Determining Obligatory Attributes in Knowledge Bases” ([pdf](Are%20All%20People%20Married.pdf))
   
 Full paper at the [Web Conference](http://www2018.thewebconf.org/) (WWW), 2018
 
@@ -19,9 +19,9 @@ We ran our system on two datasets
 ## Experimental Data
 
 For each experiment, we report:
-- The results given by the different algorithms ([here](data/Results/results/);
+- The results given by the different algorithms ([here](data/Results/results/));
 - The gold standard used ([here](data/Gold%20Standard/));
-- The per-instances evaluation for each methods and relations ([here](data/Results/evaluation-results/).
+- The per-instances evaluation for each methods and relations ([here](data/Results/evaluation-results/)).
 
 ### Raw results
 
