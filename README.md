@@ -13,7 +13,7 @@ Full paper at the [Web Conference](http://www2018.thewebconf.org/) (WWW), 2018
 
 ## Datasets
 We ran our system on two datasets
-- [YAGO](http://yago-knowledge.org) (version [3](https://www.mpi-inf.mpg.de/departments/databases-and-information-systems/research/yago-naga/yago/archive/))
+- [YAGO](http://yago-knowledge.org) (version [3.0.2](https://www.mpi-inf.mpg.de/departments/databases-and-information-systems/research/yago-naga/yago/archive/))
 - [Wikidata](http://wikidata.org) ([Truthy 2017-06-27](https://dumps.wikimedia.org/wikidatawiki/entities/), see [this](data/Datasets/wikidata/README))
 
 ## Experimental Data
